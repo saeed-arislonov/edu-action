@@ -1,0 +1,93 @@
+
+<div class="custom-nav">
+		<div class="row">
+			<div class="col-lg-4">
+				<img src="client/app/assets/8new.png" alt="Edu Action Logo" width="80" height="">
+				<span class="slogan hide-mobile">Global Student Network</span>
+
+				<div class="dropdown hide-desktop show-mobile-menu">
+					<a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+				</div>
+			</div>    
+			<div class="col-lg-4 col-sm-12 search-box">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search Edu Action">
+					<div class="input-group-btn">
+						<button class="btn btn-success" type="submit">Search</button>
+					</div>
+				</div>
+			</div>
+			<div class="hide-desktop mobile-nav">
+				<h2>asdasd</h2>
+			</div>
+			<div class="col-lg-4 call-action-buttons hide-mobile">
+				<button class="sign-up" ng-if="!isAuth()" ng-click="go_signup()">Sign Up</button>
+				<button class="log-in" ng-if="!isAuth()" ng-click="go_login()">Log In</button>
+				<!--<button class="log-in" ng-click="go_application()">College Application</button>
+				<button class="log-in">Contact Us</button>-->
+				<a> <img src="client/app/assets/profile1.jpg" width="32" alt="" ng-if="isAuth()"></a> &nbsp; &nbsp; &nbsp; 
+				<button ng-if="isAuth()" ng-click="signOut()">Sign Out</button>
+			</div>
+		</div>
+		<div class="navigation-bar">
+			<a ui-sref="home.main">Home</a>
+			<a ui-sref="home.application.overall">Apply for a College</a>
+			<a ui-sref="home.colleges">Find a College</a>
+			<!--<a href="">Compare Colleges</a>
+			<a href="">Majors</a>-->
+		</div>
+	</div>
+	<div ui-view></div>
+	<div class="footer-section">
+		<div class="contact-us" style="margin-top:0">
+			Drop Us a Line. We`ll get back ASAP
+		</div>
+		<div class="footer-wrapper">
+			<div class="row">
+				<div class="col-lg-6" style="padding-right: 30px;">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="input-field">
+								<label for="fname">Your Name</label><br>
+								<input type="text" placeholder="Contact Person">
+							</div>
+							<div class="input-field">
+								<label for="fname">Your Phone Number</label><br>
+								<input type="text" placeholder="Contact Number">
+							</div>
+							<div class="input-field">
+								<label for="fname">Your E-mail</label><br>
+								<input type="text" placeholder="Contact E-mail">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="input-field">
+								<label for="fname">Your E-mail</label><br>
+								<textarea type="text" placeholder="Contact E-mail" rows="9"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 footer-right-section">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="footer-mini-title">Information</div>
+							<ul>
+								<li>About</li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+						<div class="col-lg-6">
+							<div class="footer-mini-title">Connect</div>
+						</div>
+						<!--
+						<div class="col-lg-4">
+							
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

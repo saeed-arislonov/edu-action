@@ -1,0 +1,123 @@
+<h1 class="text-center">UPLOADS</h1>
+<form name="uploadsForm" novalidate>
+	<div class="row user-uploads" id="personal-info-form">
+		<div class="col-lg-12">
+			<div class="input-wrapper">
+				<p style="font-size: 18px;">Here is where you can upload your financial documents, transcripts, and any other documents.</p>
+				<p>
+						<input name="file" value="{{transcriptUpload}}" file-model="transcriptUpload" 
+							set-file-data="transcriptUpload = value;transcriptUpload.id = id;pushToArray(transcriptUpload)" ng-model="transcriptUpload" type="file" id="transcripts" ngf-max-size="2048" style="display:none" uib-popover="I appeared on focus! Click away and I'll vanish..."  popover-trigger="'focus'"/>
+							
+							<input name="file" value="{{financialUpload}}" file-model="financialUpload" 
+							set-file-data="financialUpload = value;financialUpload.id = id;pushToArray(financialUpload)" ng-model="financialUpload" type="file" id="financial" ngf-max-size="2048" style="display:none" />
+							
+							<input name="file" value="{{resumeUpload}}" file-model="resumeUpload" 
+							set-file-data="resumeUpload = value;resumeUpload.id = id;pushToArray(resumeUpload)" ng-model="resumeUpload" type="file" id="resume" ngf-max-size="2048" style="display:none"/>
+							
+							<input name="file" value="{{essayUpload}}" file-model="essayUpload" 
+							set-file-data="essayUpload = value;essayUpload.id = id;pushToArray(essayUpload)" ng-model="essayUpload" type="file" id="essay" ngf-max-size="2048" style="display:none"/>
+							
+							<input name="file" value="{{toeflUpload}}" file-model="toeflUpload" 
+							set-file-data="toeflUpload = value;toeflUpload.id = id;pushToArray(toeflUpload)" ng-model="toeflUpload" type="file" id="toefl" ngf-max-size="2048" style="display:none"/>
+							
+							<input name="file" value="{{ieltsUpload}}" file-model="ieltsUpload" 
+							set-file-data="ieltsUpload = value;ieltsUpload.id = id;pushToArray(ieltsUpload)" ng-model="ieltsUpload" type="file" id="ielts" ngf-max-size="2048" style="display:none"/>
+							
+							<input name="file" value="{{passportUpload}}" file-model="passportUpload" 
+							set-file-data="passportUpload = value;passportUpload.id = id;pushToArray(passportUpload)" ng-model="passportUpload" type="file" id="passport" ngf-max-size="2048" style="display:none"/>
+							
+							<input name="file" value="{{otherUpload}}" file-model="otherUpload" 
+							set-file-data="otherUpload = value;otherUpload.id = id;pushToArray(otherUpload, $event)" ng-model="otherUpload" type="file" id="other" ngf-max-size="2048" style="display:none"/>
+							
+							
+				</p>
+			</div>
+			<div class="input-wrapper">
+				<div class="row">
+					<div class="col-lg-3 col-sm-6">
+						<div ng-click="openFile('transcripts', $event)">
+							<i class="far fa-file"></i>
+							<p>Transcripts</p>
+							<!--<input type="file" class="hidden" id="transcripts">-->
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div ng-click="openFile('financial', $event)">
+							<i class="far fa-file"></i>
+							<p>Financial</p>
+							<!--<input type="file" class="hidden" id="financial">-->
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div ng-click="openFile('resume', $event)">
+							<i class="far fa-file"></i>
+							<p>Resume</p>
+							<!--<input type="file" class="hidden" id="resume">-->
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div ng-click="openFile('essay', $event)">
+							<i class="far fa-file"></i>
+							<p>Essay</p>
+							<!--<input type="file" class="hidden" id="essay">-->
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-sm-6">
+						<div ng-click="openFile('toefl', $event)">
+							<i class="far fa-file"></i>
+							<p>TOEFL</p>
+						<!--	<input type="file" class="hidden" id="toefl">-->
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div  ng-click="openFile('ielts', $event)">
+							<i class="far fa-file"></i>
+							<p>IELTS</p>
+						<!--	<input type="file" class="hidden" id="ielts">-->
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div ng-click="openFile('passport', $event)">
+							<i class="far fa-file"></i>
+							<p>PASSPORT</p>
+						<!--	<input type="file" class="hidden" id="passport">-->
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div  ng-click="openFile('other', $event)">
+							<i class="far fa-file"></i>
+							<p>Other</p>
+							<input type="file" class="hidden">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="input-wrapper">
+				<p style="font-size: 18px;">Upload your financial information, unofficial/official transcripts, or other documents</p>
+				<p class="text-danger">
+					Note: It is critical that you put in your correct financial information. Wrongful information will risk your acceptance to universities.
+				</p>
+			</div>
+			<div class="input-wrapper uploaded-table">
+				<table class="table table-bordered">
+					<tr>
+						<th>File Name</th>
+						<th>Document Type</th>
+						<th>Uploaded Date</th>
+						<th>Remove</th>
+					</tr>
+					<tr ng-repeat="item in uploadsAll" class="bouncy-slide-left">
+						<td>{{item.name}}</td>
+						<td>{{item.id}}</td>
+						<td>{{item.uploadedDate | date: 'fullDate'}}</td>
+						<td><i class="far fa-trash-alt" ng-click="removeUpload(item)"></i></td>
+					</tr>
+				</table>
+				<button ui-sref="home.application.form-objectives" class="btn btn-success next-to-form">Submit & Save</button>
+			</div>
+
+		</div>
+	</div>
+</form>

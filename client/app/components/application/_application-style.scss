@@ -1,0 +1,268 @@
+@media only screen and (max-width:767px){
+	#application-wrapper {
+    padding: 50px 40px !important;
+		.input-wrapper {
+			width: 100% !important;
+		}
+	}
+}
+
+#application-wrapper {
+	padding: 100px;
+	background-image: url(../app/assets/app-back.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	color: #fff;
+	.sub-wrapper {
+		background-color: #000;
+		opacity: .9;
+		.sub-wrapper1 {
+			padding: 40px;
+			h2 {
+				font-size: 28px;
+				text-align: center;
+			}
+			h1 {
+				color: #FB6B1D;
+				font-size: 24px;
+			}
+			.exam-result {
+				label {
+					font-size: 22px;
+					font-weight: 400;
+					margin-top: 20px;
+				}
+				th {
+					color: #FB6B1D;
+					font-size: 18px;
+				}
+				td {
+					font-size: 18px;
+				}
+			}
+			.user-info {
+				font-size: 16px;
+				border-bottom: 1px solid #fff;
+				padding: 8px;
+				margin: 0 5px;
+				border-bottom: 1px solid rgba(255, 255, 255, .2);
+				-webkit-background-clip: padding-box;
+				background-clip: padding-box;
+				.user-info-title {
+					font-weight: 700;
+					letter-spacing: 1px;
+					div {
+						letter-spacing: 2px;
+					}
+				}
+				.table>tbody>tr>td,
+				.table>tbody>tr>th {
+					border: 1px solid #ddd !important;
+				}
+			}
+			#personal-info-form {
+				.input-wrapper {
+					width: 70%;
+					margin: 20px auto;
+					.margin-top {
+						margin: 15px 0;
+					}
+					.multiselect-fields {
+						padding: 5px;
+						margin-top: 15px;
+						span {
+							font-size: 16px;
+							padding: 5px;
+							margin: 5px;
+							border: 1px solid #fff;
+							border-radius: 5px;
+						}
+					}
+					.exams-wrapper {
+						margin-top: 10px;
+						.active-exam {
+							background: #FB6B1D;
+						}
+						.exam-content {
+							.exam-sat,
+							.exam-gmat,
+							.exam-gre {
+								margin-top: 20px;
+								display: flex;
+								input {
+									margin: 10px;
+									width: 80%;
+									margin-left: 0;
+								}
+							}
+						}
+						.entrance_exams {
+							padding: 5px 20px;
+							border: 1px solid #fff;
+							font-size: 20px;
+							margin: 5px 10px;
+							border-radius: 5px;
+							&:hover {
+								cursor: pointer;
+							}
+						}
+					}
+					.dropdown-menu {
+						a {
+							font-size: 22px;
+							padding: 10px;
+						}
+					}
+					.next-to-form {
+						float: right;
+						margin-top: 30px;
+						font-size: 18px;
+						padding: 10px 30px;
+					}
+					label {
+						font-size: 18px;
+						font-weight: 400;
+					}
+					input[type="text"],
+					input[type="number"],
+					.multiselect-button {
+						width: 100%;
+						font-size: 18px;
+						padding: 7px 12px;
+						height: 40px;
+						color: #000;
+						border-radius: 5px;
+						border: 1px solid #ccc;
+					}
+					select {
+						width: 100%;
+						font-size: 18px;
+						height: 40px;
+						color: #000;
+						padding: 7px 12px;
+						border: 1px solid #ccc;
+						border: 1px solid #ccc;
+					}
+				}
+			}
+		}
+		.sub-wrapper2 {
+			padding: 40px;
+			background-color: #555555;
+			.status-header {
+				h2 {
+					float: left;
+					font-size: 28px;
+				}
+				.circle {
+					float: right;
+				}
+			}
+			.status-body {
+				h1 {
+					color: #FB6B1D;
+					font-size: 24px;
+				}
+				ul {
+					padding: 0;
+					li {
+						list-style-type: none;
+						font-size: 18px;
+						padding: 10px 5px;
+						a {
+							color: #fff;
+							&:hover {
+								cursor: pointer;
+								color: #FB6B1D;
+								text-decoration: none;
+							}
+						}
+						i {
+							font-size: 18px;
+							&:hover {
+								cursor: pointer;
+							}
+						}
+					}
+				}
+				button {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+	.circle {
+		width: 50px;
+		margin: 0 20px 20px;
+		margin-bottom: 0;
+		display: inline-block;
+		position: relative;
+		text-align: center;
+		vertical-align: top;
+		strong {
+			position: absolute;
+			top: 30px;
+			width: 100%;
+			text-align: center;
+			line-height: 45px;
+			font-size: 22px;
+			letter-spacing: 1px;
+		}
+	}
+}
+
+@media only screen and (max-width:767px) {
+	.user-info-title {
+		float: left !important;
+		+ div {
+			float: right;
+		}
+	}
+	.flex-width {
+		display:block;
+	}
+	.margin-right {
+		margin-right: 0;
+	}
+}
+
+@media only screen and (min-width:1023px) {
+	.sub-wrapper2 {
+		min-height: 1000px;
+	}
+	.flex-width {
+		display:flex;
+	}
+	.margin-right {
+		margin-right: 20px;
+	}
+	.fa-trash-alt {
+		cursor: pointer;
+	}
+}
+
+.user-uploads {
+	.col-lg-3 div {
+		text-align: center;
+		margin: 40px 10px;
+		 &:hover {
+				cursor: pointer;
+		 }
+	}
+	.input-wrapper {
+		//width: 100% !important;
+		.row {
+			//display: flex;
+		}
+	}
+	.uploaded-table {
+		font-size: 20px;
+	}
+	i.far {
+		font-size: 24px;
+	}
+	p {
+		font-size: 18px;
+	}
+}

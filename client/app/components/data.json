@@ -1,0 +1,90 @@
+{
+	personalForm : {
+		full_name: "Saidbek",
+		date_of_birth: "15/12/1993",
+		gender: "m",
+		languages_speak: [ { "title": "English"},{ "title": "Russian"}],
+		//languages_speak: [ "English" , "Russian"]
+			// or
+		is_transfer_student: "no",
+		country_from : {
+			id: "12",
+			title: "Uzbekistan"
+		},
+		country_born : {
+			id: "12",
+			title: "Uzbekistan"
+		},
+		city_born : "Tashkent",
+		citizenship : {
+			id: "12",
+			title: "Uzbekistan"
+		},
+		passport_number : "123123123",
+		passport_issued_date: "12/12/1990",
+		passport_expiration_date: "12/12/2100",
+		school_attending_now: "College Name",
+		education_level: "College",
+		expected_graduation_year: "2020"
+	},
+	contact_form : {
+		email: "sadasdsad",
+		primary_phone: "12323123",
+		secondary_phone: "123123",
+		skypeId: "asdasd",
+		home_address : {
+			address1 : "123 Main Street",
+			address2: "Apt 2A",
+			city: "Tashkent",
+			state: "Almazar",
+			country: "Uzbekistan".
+			zip_code: "111011"
+		},
+		mailing_address : { 
+			address1 : "123 second Street",
+			address2: "Apt 12A",
+			city: "Andijan",
+			state: "Olmaliq",
+			country: "Uzbekistan".
+			zip_code: "133011"
+		}
+	},
+	
+	user_objectives : {
+		intended_start_date : "Spring, 2020",
+		education_style_interested: "Campus Only",
+		financial_ability: "50.000",
+		high_school_gpa: "3.25",
+		college_entrance_exams: [
+			{
+				id: "12",
+				title: "SAT",
+				reading_writing: "700",
+				math: "700",
+				total: "1400"
+			},
+			{
+				id : "14",
+				title: "GMAT",
+				gmat: "700"
+			},
+			{
+				title: "GRE",
+				verbal: "",
+				quantitative: "",
+				analitical: ""
+			}
+		],
+		international_exams: [
+			{
+				title: "TOEFL",
+				reading: "68",
+				listening: "67",
+				speaking: "30",
+				writing: "28",
+				total: "88"
+			},
+			
+		]
+	}
+}

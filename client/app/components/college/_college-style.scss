@@ -1,0 +1,329 @@
+@media (max-width: 986px) {
+	#colleges-page {
+		padding: 50px 10px !important;
+	}
+}
+
+#colleges-page {
+	background-image: url('../app/assets/bsi-slider.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 100px 50px;
+	color: #fff;
+	h3 {
+		color: #FB6B1D;
+		text-align: center;
+	}
+	.search-field {
+		background-color: #000;
+		opacity: .9;
+		display: inline-block;
+		.search_button {
+			background-color: #FB6B1D;
+			border: 1px solid #fff;
+			padding: 5px 15px;
+			font-size: 18px;
+			border-radius: 5px;
+			color: #fff;
+			float: right;
+			margin: 20px 0;
+		}
+	}
+	.region-based {
+		.regions-white-bg {
+			background-color: #fff;
+			color: #000;
+			display: inline-block;
+		}
+	}
+	.major-based {
+		margin-top: 20px;
+		.majors-white-bg {
+			background-color: #fff;
+			color: #000;
+			display: inline-block;
+			width: 100%;
+		}
+	}
+	.input-wrapper {
+		width: 80%;
+		margin: 20px auto;
+		.margin-top {
+			margin: 15px 0;
+		}
+		.multiselect-fields {
+			padding: 5px;
+			margin-top: 15px;
+			span {
+				font-size: 18px;
+				padding: 5px;
+				margin: 5px;
+				border: 1px solid #fff;
+				border-radius: 5px;
+			}
+		}
+		.exams-wrapper {
+			margin-top: 10px;
+			.active-exam {
+				background: #FB6B1D;
+			}
+			.exam-content {
+				.exam-sat,
+				.exam-gmat,
+				.exam-gre {
+					margin-top: 20px;
+					display: flex;
+					input {
+						margin: 10px;
+						width: 80%;
+						margin-left: 0;
+					}
+				}
+			}
+			.entrance_exams {
+				padding: 5px 20px;
+				border: 1px solid #fff;
+				font-size: 18px;
+				margin: 5px 10px;
+				border-radius: 5px;
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+		.dropdown-menu {
+			a {
+				font-size: 18px;
+				padding: 10px;
+			}
+		}
+		.next-to-form {
+			float: right;
+			margin-top: 30px;
+			font-size: 18px;
+			padding: 10px 30px;
+		}
+		label {
+			font-size: 18px;
+			font-weight: 400;
+		}
+		input[type="text"],
+		input[type="number"],
+		.multiselect-button {
+			width: 100%;
+			font-size: 16px;
+			padding: 7px 12px;
+			height: 50px;
+			color: #000;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+		select {
+			width: 100%;
+			font-size: 16px;
+			height: 50px;
+			color: #000;
+			padding: 7px 12px;
+			border: 1px solid #ccc;
+			border: 1px solid #ccc;
+		}
+	}
+}
+
+.search-majors {
+	width: 190px;
+	margin: 3px;
+	height: 170px;
+	background-color: #e6e6e6;
+	//color: #eeeeee;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	float: left;
+	color: #222;
+	text-align: center;
+	padding: 20px;
+	word-wrap: break-word;
+	img {
+		padding: 5px;
+		margin: 5px;
+	}
+	&:hover {
+		text-decoration: none;
+	}
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.dept-container {
+	width: 990px;
+	max-width: 100%;
+	position: relative;
+	margin: 0px auto 50px auto;
+}
+
+@media (max-width: 986px) {
+	.dept-container {
+		width: 500px;
+		margin-bottom: 0px;
+	}
+	.search-majors {
+		width: 45% !important;
+		height: 80px !important;
+		padding: 10px !important;
+		margin: 5px !important;
+		br {
+			display: none;
+		}
+		img {
+			display: none;
+		}
+	}
+}
+
+.search-flags {
+	margin: 0 auto;
+	text-align: center;
+	width: 140px;
+	height: 120px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: block;
+	padding-top: 125px;
+	padding-bottom: 30px;
+	color: #333;
+}
+
+.search-flag-us {
+	background-image: url(../app/assets/countries/usa-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-aus {
+	background-image: url(../app/assets/countries/aust-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+
+/*
+		.search-flag-aus:hover {
+			background-image: url(https://s3-us-west-2.amazonaws.com/asset.plexuss.com/flags/aus-filled.png);
+		}*/
+
+//		.search-flag-us {
+//			background-image: url(https://s3-us-west-2.amazonaws.com/asset.plexuss.com/flags/us-black.png);
+//			transition: background-image 0.25s ease-in;
+//		}
+//		.search-flag-us:hover {
+//			background-image: url(https://s3-us-west-2.amazonaws.com/asset.plexuss.com/flags/us-filled.png);
+//		}
+.search-flag-uk {
+	background-image: url(../app/assets/countries/uk-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+
+/*.search-flag-uk:hover {
+			background-image: url(https://s3-us-west-2.amazonaws.com/asset.plexuss.com/flags/uk-filled.png);
+		}*/
+
+.search-flag-canada {
+	background-image: url(../app/assets/countries/canada-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+
+/*.search-flag-canada:hover {
+			background-image: url(https://s3-us-west-2.amazonaws.com/asset.plexuss.com/flags/canada-filled.png);
+		}*/
+
+.search-flag-ger {
+	background-image: url(../app/assets/countries/germany-flag.jpg);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-austria {
+	background-image: url(../app/assets/countries/austria-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-south-korea {
+	background-image: url(../app/assets/countries/south-korea.png);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-japan {
+	background-image: url(../app/assets/countries/japan-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-singapore {
+	background-image: url(../app/assets/countries/singapore1-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-my {
+	background-image: url(../app/assets/countries/malay-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-malta {
+	background-image: url(../app/assets/countries/malta-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-latvia {
+	background-image: url(../app/assets/countries/latvia-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-china {
+	background-image: url(../app/assets/countries/china.png);
+	transition: background-image 0.25s ease-in;
+}
+
+.search-flag-poland {
+	background-image: url(../app/assets/countries/poland-flag.png);
+	transition: background-image 0.25s ease-in;
+}
+
+
+/*.search-flag-ger:hover {
+			background-image: url(https://s3-us-west-2.amazonaws.com/asset.plexuss.com/flags/ger-filled.png);
+		}*/
+
+.college-view {
+	height: 100%;
+	//background-image: url(../app/assets/monster.jpg);
+	padding-top: 58px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	p {
+		font-size: 16px;
+	}
+	.main-top-div {
+		//background-color:#434855;
+		p {
+			//color: #fff;
+			padding: 10px;
+			
+		}
+	}
+	.main-second-div {
+		background-image: url(../app/assets/15.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		color: #fff;
+	  padding: 50px 15px;
+	}
+	.main-second-div-2 {
+		background-image: url(../app/assets/18.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		color: #fff;
+	  padding: 50px 15px;
+	}
+}

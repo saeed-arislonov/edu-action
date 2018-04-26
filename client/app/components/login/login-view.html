@@ -1,0 +1,86 @@
+<div class="login-reg">
+	<div class="login-wrapper">
+		<div class="login-section" ng-switch on="stage">
+			<div class="col-lg-12 input-fields-login login-image">
+				<img src="client/app/assets/8new.png" alt="Edu-Action Study Abroad" width="140" ui-sref="home.main">
+			</div>
+			
+			
+			
+			<div id="registration-section" class="" ng-switch-default>
+				<div class="login-title">Sign Up Free and Get Started {{register.email == ''}} </div>
+				<form name="sign_up_form" novalidate>
+					<div class="row">
+						<div class="col-lg-6 input-fields-login">
+							<input type="text" placeholder="First Name*" ng-model="register.name" required ng-class="form_submitted && register.name == '' ? 'error-input' : ''">
+						</div>
+						<div class="col-lg-6 input-fields-login">
+							<input type="text" placeholder="Last Name*" ng-model="register.lastname" required ng-class="form_submitted && register.lastname == '' ? 'error-input' : ''">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 input-fields-login">
+							<input type="email" placeholder="Email Address*" ng-model="register.email" required ng-class="form_submitted && register.email == '' || form_submitted && sign_up_form.email.$error.email ? 'error-input' : ''" name="email"
+							>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 input-fields-login">
+							<input type="password" placeholder="Password" ng-model="register.password" required ng-class="form_submitted && register.password == '' ? 'error-input' : ''">
+						</div>
+						<div class="col-lg-6 input-fields-login">
+							<input type="password" ng-model="password2" ng-blur="matchPassword(password2)" required ng-class="form_submitted && register.password == '' ? 'error-input' : ''">
+							<p class="error-text" ng-show="pass_match">Password doesn`t match</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 input-fields-login">
+							<input type="text" ng-model="register.birth_date"  name="date"
+							ng-class="form_submitted && register.birth_date == '' ? 'error-input' : ''" required
+							placeholder="dd/mm/yyyy" ui-mask="99/99/9999" ui-mask-use-viewvalue="true">
+						</div>
+						<div class="col-lg-6 input-fields-login agreement-text">
+							You must be 13 years or older to sign up.
+						</div>
+						<div class="col-lg-12 input-fields-login">
+						<label for="agree">
+							<input type="checkbox" ng-model="agreee" id="agree" required> <span style="font-size: 14px;margin-left:10px">I agree to the Edu-Action <a href="#">terms of service</a> & <a href="#">privacy policy</a></span>
+						</label>
+						</div>
+						<div class="col-lg-12 sign-up-button">
+							<button ng-click="sign_up(sign_up_form.$valid)"
+							  ng-if="agreee">Sign Up</button>
+							  <button type="submit" uib-popover="You should agree to our terms of services and privacy policy" 
+							 ng-if="!agreee" popover-trigger="'mouseenter'">Sign Up</button>
+							 
+							<a class="already-account" id="switch-to-login" ng-click="next('stage1')">Already have an account?</a>
+							<p>
+								<a href="" ui-sref="home.main">Continue as Guest user</a>
+							</p>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			
+			
+			<div id="sign-in-section" class="" ng-switch-when="stage1">
+				<div class="login-title">Login to Your account</div>
+				<form name="login_form">
+					<div class="row">
+						<div class="col-lg-12 input-fields-login">
+							<input type="text" placeholder="Login" ng-model="login.email" required>
+						</div>
+						<div class="col-lg-12 input-fields-login">
+							<input type="password" placeholder="Password" ng-model="login.password" required>
+						</div>
+						<div class="col-lg-12 sign-up-button">
+							<button type="submit" ng-click="signin(login_form.$valid)">Sign In</button>
+							<a href="" class="already-account" ng-click="back('')">Don't have an account?</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

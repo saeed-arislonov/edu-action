@@ -1,7 +1,7 @@
-angular.module('App.components', [
-  'App.components.home',
-  'App.components.seedHelp'
+angular.module('eduAction.components', [
+  'eduAction.components.home',
+  'eduAction.components.seedHelp'
 ]);
 
-angular.module('App.components.home', []);
-angular.module('App.components.seedHelp', []);
+angular.module('eduAction.components.home', []);
+angular.module('eduAction.components.seedHelp', []);

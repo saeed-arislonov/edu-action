@@ -1,0 +1,53 @@
+<div id="application-wrapper">
+	<div class="row sub-wrapper">
+		<div class="col-lg-9 sub-wrapper1">
+			<div class="form-wrapper">
+				<h2>Saidbek Arislonov College Application</h2>
+				<div id="form-views" class="bouncy-slide-left" ui-view></div>
+			</div>
+		</div>
+		<div class="col-lg-3 sub-wrapper2">
+			<div class="status-header">
+				<h2>Application Status</h2>
+				<div class="circle" id="circle-a">
+					<strong></strong>
+				</div>
+				<span style="font-size:18px;" ui-sref="home.application.overall">Preview Application</span>
+			</div>
+			<div style="clear:both"></div>
+			<div class="status-body">
+			<h1>Sections</h1>
+				<ul>
+					<li>
+						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
+						<a ui-sref="home.application.form-personal"> Personal Information </a>
+					</li>
+					<li ui-sref="home.application.form-contact">
+						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
+						 <a ui-sref="home.application.form-contact">Contact Info</a>
+					</li>
+					<li>
+						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
+						<a ui-sref="home.application.form-objectives"> Objectives </a>
+					</li>
+					<li>
+						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
+						<a ui-sref="home.application.form-sponsors">Sponsors </a> 
+					</li>
+					<li>
+						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i class="fa fa-check-circle" style="color:#2bb552" title="Form successfully submitted"></i>
+						<a ui-sref="home.application.form-uploads">Uploads </a>
+					</li>
+				</ul>
+				<div>
+					<button class="btn btn-success" ui-sref="home.application.form-personal">Edit Application</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

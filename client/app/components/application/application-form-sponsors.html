@@ -1,0 +1,111 @@
+<h1 class="text-center">SPONSORS</h1>
+<div class="row" id="personal-info-form">
+<form name="sponsorForm">
+	<div class="col-lg-7">
+		<div class="input-wrapper">
+			<p style="font-size: 20px;">In order to receive an I-20, universities want to know how you plan to pay these fees annually.</p> <br><br><br>
+			<label for="date_of_birth">Choose an option below ?{{qwe}} </label>
+			<select name="" id="date_of_birth" ng-model="qwe">
+				<option value="parent">Parent</option>
+				<option value="relative">Relative</option>
+				<option value="sponsor">Sponsor</option>
+			</select>
+		</div>
+	</div>
+	<div class="col-lg-5">
+
+		<div id="parent-sponsor" class="bouncy-slide-left" ng-show="qwe == 'parent'">
+			<div class="input-wrapper flex-width" style="width:90%;">
+				<div class="margin-right">
+					<label for="pass_issued">Parent First Name *</label>
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="First Name" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+				<div>
+					<label for="pass_exp">Parent Last Name *</label>
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Last Name" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+			</div>
+			<div class="input-wrapper flex-width" style="width:90%;">
+				<div class="margin-right">
+					<label for="pass_issued">Phone Number *</label>
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="Phone Number" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+				<div>
+					<label for="pass_exp">Email *</label>
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Email" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+			</div>
+		</div>
+
+		<div id="relative-sponsor" class="bouncy-slide-left" ng-show="qwe == 'relative'">
+			<div class="input-wrapper flex-width" style="width:100%;">
+				<div class="margin-right">
+					<label for="pass_issued">Relative First Name *</label>
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="First Name" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+				<div>
+					<label for="pass_exp">Relative Last Name *</label>
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Last Name" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+			</div>
+			<div class="input-wrapper flex-width" style="width:100%;">
+				<div class="margin-right">
+					<label for="pass_exp">Relation To You</label>
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Relationship type" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+				<div class="margin-right">
+					<label for="pass_issued">Phone Number *</label>
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="Phone Number" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+				<div>
+					<label for="pass_exp">Email *</label>
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Email" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" >
+				</div>
+			</div>
+		</div>
+		<div id="sponsor-sponsor" class="bouncy-slide-left" ng-show="qwe == 'sponsor'">
+			<div class="input-wrapper flex-width" style="width:100%;">
+				<div class="margin-right">
+					<label for="pass_issued">Sponsor Organization Name *</label>
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="Organization Name" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+				<div>
+					<label for="pass_exp">Contact Name *</label>
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Contact Person" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+			</div>
+			<div class="input-wrapper flex-width" style="width:100%;">
+				<div class="margin-right">
+					<label for="pass_exp">Title</label>
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+				<div class="margin-right">
+					<label for="pass_issued">Phone Number *</label>
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="Phone Number" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+				</div>
+
+				<div>
+					<label for="pass_exp">Email *</label>
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Email" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" >
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+</form>
+</div>
+
+
+<button ui-sref="application.overall">NEXT</button>

@@ -35,7 +35,6 @@
    * Build application (concat and uglify)
    */
   gulp.task('buildApp', ['templateCache'], function () {
-    console.log('ololo');
     gulp.src([
       './client/app/components/modules.js/',
       './client/app/shared/modules.js/',

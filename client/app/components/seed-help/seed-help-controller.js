@@ -1,11 +1,9 @@
 (function () {
   'use strict';
 
-  angular.module('App.components.seedHelp')
+  angular.module('eduAction.components.seedHelp')
     .controller('seedHelp', function ($scope, Query) {
-      Query.test.get(function (res) {
-        $scope.text = res.data;
-      });
+      
     });
 
 }());
