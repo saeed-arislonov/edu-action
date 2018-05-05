@@ -16,6 +16,12 @@
 		$rootScope.go_my = function(){
 			$state.go('home.my')
 		};
+		$rootScope.go_sg = function(){
+			$state.go('home.sg')
+		};
+		$rootScope.go_au = function(){
+			$state.go('home.au')
+		};
 		
 			$('.card-wrapper').slick({
 				dots: true,

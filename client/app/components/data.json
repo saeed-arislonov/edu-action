@@ -57,6 +57,13 @@
 		high_school_gpa: "3.25",
 		college_entrance_exams: [
 			{
+				id: "11",
+				title: "ACT",
+				english: "12",
+				math: "700",
+				composite: "1400"
+			},
+			{
 				id: "12",
 				title: "SAT",
 				reading_writing: "700",
@@ -64,19 +71,43 @@
 				total: "1400"
 			},
 			{
-				id : "14",
+				id: "13",
+				title: "PSAT",
+				reading_writing: "700",
+				math: "700",
+				total: "1400"
+			},
+			{
+				id: "14",
+				title: "LSAT",
+				lsat: "700"
+			},
+			{
+				id : "15",
 				title: "GMAT",
 				gmat: "700"
 			},
 			{
+				id: "18",
 				title: "GRE",
-				verbal: "",
-				quantitative: "",
-				analitical: ""
+				verbal: "123",
+				quantitative: "12",
+				analitical: "12"
+			},
+			{
+				id: "16",
+				title: "AP Test",
+				ap : "122"
+			},
+			{
+				id: "17",
+				title: "GED",
+				ged : "122"
 			}
 		],
 		international_exams: [
 			{
+				id : "123",
 				title: "TOEFL",
 				reading: "68",
 				listening: "67",
@@ -84,7 +115,43 @@
 				writing: "28",
 				total: "88"
 			},
-			
+			{
+				id : "121",
+				title: "TOEFL iBT",
+				reading: "68",
+				listening: "67",
+				speaking: "30",
+				writing: "28",
+				total: "88"
+			},
+			{
+				id : "3131",
+				title: "TOEFL PBT",
+				reading: "68",
+				listening: "67",
+				structure_written_expression: "30",
+				total: "88"
+			},
+			{
+				id : "231",
+				title: "IELTS",
+				reading: "68",
+				listening: "67",
+				speaking: "30",
+				writing: "30",
+				total: "88"
+			},
+			{
+				id: "17",
+				title: "PTE Academic",
+				pte : "122"
+			},
+			{
+				id: "44",
+				title: "Other English Test",
+				other_title : "title"
+			}
 		]
 	}
+	
 }

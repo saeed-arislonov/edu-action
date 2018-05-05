@@ -89,7 +89,7 @@
 						<div  ng-click="openFile('other', $event)">
 							<i class="far fa-file"></i>
 							<p>Other</p>
-							<input type="file" class="hidden">
+							<!--<input type="file" class="hidden">-->
 						</div>
 					</div>
 				</div>
@@ -115,7 +115,10 @@
 						<td><i class="far fa-trash-alt" ng-click="removeUpload(item)"></i></td>
 					</tr>
 				</table>
-				<button ui-sref="home.application.form-objectives" class="btn btn-success next-to-form">Submit & Save</button>
+				<button ng-click="submit_uploads_form(transcriptUpload, financialUpload, resumeUpload, essayUpload, toeflUpload, ieltsUpload, passportUploadotherUpload)" class="btn btn-success next-to-form" ng-disabled="submitting_uploads">Submit & Save 
+				<i class="fas fa-spinner fa-spin" ng-if="submitting_uploads"></i>
+
+</button>
 			</div>
 
 		</div>

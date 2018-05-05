@@ -4,76 +4,79 @@
 		<div class="col-lg-12">
 			<div class="input-wrapper">
 				<label for="name">Your Email *</label>
-				<input type="text" name="email" id="email" placeholder="Email" required ng-model="personal.email" ng-class="applicationFormSubmitted && contactForm.name.$error.required ? 'error-input' : ''">
+				<input type="text" name="email" id="email" placeholder="Email" required ng-model="contact.email" ng-class="applicationFormSubmitted && contactForm.name.$error.required ? 'error-input' : ''">
 			</div>
 			<div class="input-wrapper">
 				<label for="phone1">Your Primary Phone *</label>
-				<input type="text" id="phone1" name="phone1" placeholder="Phone Number 1" ng-model="personal.phone1" required ng-class="applicationFormSubmitted && contactForm.phone1.$error.required ? 'error-input' : ''">
+				<input type="text" id="phone1" name="phone1" placeholder="Phone Number 1" ng-model="contact.primary_phone" required ng-class="applicationFormSubmitted && contactForm.phone1.$error.required ? 'error-input' : ''">
 			</div>
 			<div class="input-wrapper">
 				<label for="phone2">Your Secondary Phone</label>
-				<input type="text" id="phone2" name="phone2" placeholder="Phone Number 2" ng-model="personal.phone2">
+				<input type="text" id="phone2" name="phone2" placeholder="Phone Number 2" ng-model="contact.secondary_phone">
 			</div>
 			<div class="input-wrapper">
 				<label for="skype">Your Skype ID</label>
-				<input type="text" id="skype" name="skype" placeholder="Skype ID" ng-model="personal.skype">
+				<input type="text" id="skype" name="skype" placeholder="Skype ID" ng-model="contact.skypeid">
 			</div>
 			<div class="input-wrapper">
 				<label for="country">Home Address *</label>
 				<div class="row">
 					<div class="col-lg-6 margin-top">
-						<input type="text" id="address1" name="address1" placeholder="Address Line #1" required>
+						<input type="text" id="address1" name="address1" placeholder="Address Line #1" required ng-model="contact.home_address_1">
+						
+						<input type="hidden" ng-model="contact.id">
 					</div>
 					<div class="col-lg-6 margin-top">
-						<input type="text" id="address2" name="address2" placeholder="Address Line #2">
+						<input type="text" id="address2" name="address2" placeholder="Address Line #2" model="contact.home_address_2">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-3 margin-top">
-						<input type="text" id="city" name="city" placeholder="City" required>
+						<input type="text" id="city" name="city" placeholder="City" required ng-model="contact.home_city">
 					</div>
 					<div class="col-lg-3 margin-top">
-						<input type="text" id="state" name="state" placeholder="State" required>
+						<input type="text" id="state" name="state" placeholder="State" required ng-model="contact.home_state">
 					</div>
 					<div class="col-lg-3 margin-top">
 						<input type="text" id="country" name="country" placeholder="Country" ng-model="personal.countryy" uib-typeahead="country.name for country in countryList | filter:$viewValue | limitTo:8" ng-class="applicationFormSubmitted && personalForm.country.$error.required ? 'error-input' : ''" required>
 					</div>
 					<div class="col-lg-3 margin-top">
-						<input type="text" id="zipcode" name="zipcode" placeholder="Zipcode" required>
+						<input type="text" id="zipcode" name="zipcode" placeholder="Zipcode" required ng-model="contact.home_zip_code">
 					</div>
 					<div class="col-lg-12">
 						<label for="alternate_addressnone">
-							<input style="height: 18px;width: 18px;" type="radio" id="alternate_addressnone" name="mailing_address" ng-model="alternate" ng-value="false"> No alternate address
+							<input style="height: 18px;width: 18px;" type="radio" id="alternate_addressnone" name="mailing_address" ng-model="alternate" ng-value="false" value="1"> No alternate address
 						</label>
 						<span style="padding:0 20px;"> &nbsp; </span>
 						<label for="alternate_addresssend">
-							<input style="width: 18px;height: 18px;" type="radio" id="alternate_addresssend" name="mailing_address" ng-model="alternate" ng-value="true"> Send Mail To Alternate Address
+							<input style="width: 18px;height: 18px;" type="radio" id="alternate_addresssend" name="mailing_address" ng-model="alternate" ng-value="true"> Send Mail To Alternate Address {{alternate}}
 						</label>
 					</div>
 				</div>
 
 				<div class="row bouncy-slide-left" ng-show="alternate">
 					<div class="col-lg-6 margin-top">
-						<input type="text" id="address1" name="address1" placeholder="Address Line #1" required>
+						<input type="text" id="address1" name="address1" placeholder="Mailing Address Line #1 " ng-required="alternate" ng-model="contact.mail_address_1">
 					</div>
 					<div class="col-lg-6 margin-top">
-						<input type="text" id="address2" name="address2" placeholder="Address Line #2">
+						<input type="text" id="address2" name="address2" placeholder="Mailing Address Line #2" ng-model="contact.mail_address_2">
 					</div>
 					<div class="col-lg-3 margin-top">
-						<input type="text" id="city2" name="city2" placeholder="City" required>
+						<input type="text" id="city2" name="city2" placeholder="City" ng-model="contact.mail_city" ng-required="alternate">
 					</div>
 					<div class="col-lg-3 margin-top">
-						<input type="text" id="state2" name="state2" placeholder="State" required>
+						<input type="text" id="state2" name="state2" placeholder="State" ng-model="contact.mail_state" ng-required="alternate">
 					</div>
 					<div class="col-lg-3 margin-top">
 						<input type="text" id="country2" name="country2" placeholder="Country" ng-model="personal.countryy" uib-typeahead="country.name for country in countryList | filter:$viewValue | limitTo:8" ng-class="applicationFormSubmitted && personalForm.country.$error.required ? 'error-input' : ''" required>
 					</div>
 					<div class="col-lg-3 margin-top">
-						<input type="text" id="zipcode" name="zipcode2" placeholder="Zipcode" required>
+						<input type="text" id="zipcode" name="zipcode2" placeholder="Zipcode" required ng-model="contact.mail_zip_code" ng-required="alternate">
 					</div>
 					
 				</div>
-				<button ui-sref="home.application.form-objectives" class="btn btn-success next-to-form">Submit & Next</button>
+				<button ng-click="submit_contact_form(contactForm.$valid)" class="btn btn-success next-to-form" ng-disabled="submitting_contacts">Submit & Next
+					<i class="fas fa-spinner fa-spin" ng-if="submitting_contacts"></i></button>
 
 
 

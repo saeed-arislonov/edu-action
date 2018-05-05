@@ -22,6 +22,14 @@
 					templateUrl: 'client/app/components/home/home-view.html',
 					controller: 'main-controller'
 				})
+				.state('home.privacy_policy', {
+					url: '/privacy-policy',
+					templateUrl: 'client/app/components/home/privacy-policy.html'
+				})
+				.state('home.term_of_services', {
+					url: '/terms-of-services',
+					templateUrl: 'client/app/components/home/terms-of-services.html'
+				})
 				.state('home.usa', {
 					url: '/study-in-usa',
 					templateUrl: 'client/app/components/college/study-usa.html',
@@ -37,6 +45,21 @@
 					templateUrl: 'client/app/components/college/study-my.html',
 					controller: 'collegeController'
 				})
+				.state('home.sg', {
+					url: '/study-in-sg',
+					templateUrl: 'client/app/components/college/study-sg.html',
+					controller: 'collegeController'
+				})
+				.state('home.kr', {
+					url: '/study-in-kr',
+					templateUrl: 'client/app/components/college/study-kr.html',
+					controller: 'collegeController'
+				})
+				.state('home.au', {
+					url: '/study-in-au',
+					templateUrl: 'client/app/components/college/study-au.html',
+					controller: 'collegeController'
+				})
 				.state('home.colleges', {
 					url: '/college-search',
 					templateUrl: 'client/app/components/college/college-view.html',
@@ -50,8 +73,11 @@
 				})
 				.state('home.application.overall', {
 					url: '/overall',
-					templateUrl: 'client/app/components/application/application-overall.html',
-					controller: 'application',
+					templateUrl: 'client/app/components/application/application-overall.html'
+				})
+				.state('home.application.college-status', {
+					url: '/college-status',
+					templateUrl: 'client/app/components/application/application-college-status.html'
 				})
 				.state('home.application.form-personal', {
 					url: '/personal',

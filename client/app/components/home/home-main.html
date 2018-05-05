@@ -2,7 +2,7 @@
 <div class="custom-nav">
 		<div class="row">
 			<div class="col-lg-4">
-				<img src="client/app/assets/8new.png" alt="Edu Action Logo" width="80" height="">
+				<img src="client/app/assets/8new.png" alt="Edu Action Logo" width="80" height="" ui-sref="home.main">
 				<span class="slogan hide-mobile">Global Student Network</span>
 
 				<div class="dropdown hide-desktop show-mobile-menu">
@@ -25,7 +25,8 @@
 				<button class="log-in" ng-if="!isAuth()" ng-click="go_login()">Log In</button>
 				<!--<button class="log-in" ng-click="go_application()">College Application</button>
 				<button class="log-in">Contact Us</button>-->
-				<a> <img src="client/app/assets/profile1.jpg" width="32" alt="" ng-if="isAuth()"></a> &nbsp; &nbsp; &nbsp; 
+				<a ui-sref="home.application.college-status" style="color: #fff" ng-if="isAuth()"> {{currentUser.name + " " + currentUser.lastname}}  &nbsp; 
+				 <img src="client/app/assets/profile1.jpg" width="32" alt="" ></a> &nbsp; &nbsp; &nbsp; 
 				<button ng-if="isAuth()" ng-click="signOut()">Sign Out</button>
 			</div>
 		</div>
@@ -33,6 +34,7 @@
 			<a ui-sref="home.main">Home</a>
 			<a ui-sref="home.application.overall">Apply for a College</a>
 			<a ui-sref="home.colleges">Find a College</a>
+			<a ui-sref="home.application.college-status" ng-if="isAuth()">My Status</a>
 			<!--<a href="">Compare Colleges</a>
 			<a href="">Majors</a>-->
 		</div>
@@ -65,6 +67,9 @@
 								<label for="fname">Your E-mail</label><br>
 								<textarea type="text" placeholder="Contact E-mail" rows="9"></textarea>
 							</div>
+							<div>
+								<button class="btn btn-primary pull-right">SEND</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -72,15 +77,24 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="footer-mini-title">Information</div>
-							<ul>
-								<li>About</li>
-								<li></li>
-								<li></li>
-								<li></li>
+							<ul class="info-footer">
+								<li>About Edu Action</li>
+								<li>F.A.Q</li>
+								<li ui-sref="home.term_of_services">Terms of Services</li>
+								<li ui-sref="home.privacy_policy">Privacy Policy</li>
 							</ul>
 						</div>
 						<div class="col-lg-6">
 							<div class="footer-mini-title">Connect</div>
+							<a href="https://www.facebook.com/EduActionUzb/">
+								<img src="client/app/assets/footer/facebook.png" width="50" alt="facebook logo">
+							</a>
+							<a href="https://www.instagram.com/eduaction.uz/">
+								<img src="client/app/assets/footer/instagram.png" width="50" alt="instagram logo">
+							</a>
+							<a href="https://t.me/eduactionuz">
+								<img src="client/app/assets/footer/telegram.png" width="50" alt="telegram logo">
+							</a>
 						</div>
 						<!--
 						<div class="col-lg-4">
