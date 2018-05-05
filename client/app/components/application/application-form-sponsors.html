@@ -1,111 +1,125 @@
 <h1 class="text-center">SPONSORS</h1>
 <div class="row" id="personal-info-form">
-<form name="sponsorForm">
-	<div class="col-lg-7">
-		<div class="input-wrapper">
-			<p style="font-size: 20px;">In order to receive an I-20, universities want to know how you plan to pay these fees annually.</p> <br><br><br>
-			<label for="date_of_birth">Choose an option below ?{{qwe}} </label>
-			<select name="" id="date_of_birth" ng-model="qwe">
+	<form name="sponsorForm1">
+		<div class="col-lg-6">
+			<div class="input-wrapper">
+				<p style="font-size: 20px;">In order to receive an I-20, universities want to know how you plan to pay these fees annually.</p> <br><br><br>
+				<label for="date_of_birth">Choose an option below ?{{qwe}} </label>
+				<select name="" id="date_of_birth" ng-model="sponsor.relationship_type">
 				<option value="parent">Parent</option>
 				<option value="relative">Relative</option>
 				<option value="sponsor">Sponsor</option>
 			</select>
-		</div>
-	</div>
-	<div class="col-lg-5">
-
-		<div id="parent-sponsor" class="bouncy-slide-left" ng-show="qwe == 'parent'">
-			<div class="input-wrapper flex-width" style="width:90%;">
-				<div class="margin-right">
-					<label for="pass_issued">Parent First Name *</label>
-					<input type="text" id="pass_issued" name="pass_issued" placeholder="First Name" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
-				</div>
-
-				<div>
-					<label for="pass_exp">Parent Last Name *</label>
-					<input type="text" id="pass_exp" name="pass_exp" placeholder="Last Name" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
-				</div>
-
-			</div>
-			<div class="input-wrapper flex-width" style="width:90%;">
-				<div class="margin-right">
-					<label for="pass_issued">Phone Number *</label>
-					<input type="text" id="pass_issued" name="pass_issued" placeholder="Phone Number" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
-				</div>
-
-				<div>
-					<label for="pass_exp">Email *</label>
-					<input type="text" id="pass_exp" name="pass_exp" placeholder="Email" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
-				</div>
-
 			</div>
 		</div>
+		<div class="col-lg-6">
 
-		<div id="relative-sponsor" class="bouncy-slide-left" ng-show="qwe == 'relative'">
+			<div id="parent-sponsor" class="bouncy-slide-left" ng-if="sponsor.relationship_type">
+				<div class="input-wrapper flex-width" style="width:90%;">
+					<div class="bouncy-slide-left" ng-show="sponsor.relationship_type == 'relative'">
+						<label for="pass_exp">Relation To You</label>
+						<input type="text" id="pass_exp" name="pass_exp" placeholder="Relationship type" ng-model="sponsor.relationship" 
+						ng-required="sponsor.relationship_type == 'relative'" ng-class="sponsorForm && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					</div>
+					<div class="bouncy-slide-left" ng-show="sponsor.relationship_type == 'sponsor'">
+						<label for="pass_issued">Sponsor Organization Name *</label>
+						<input type="text" id="pass_issued" name="pass_issued" placeholder="Organization Name" ng-model="sponsor.organization_name" ng-required="sponsor.relationship_type == 'sponsor'" ng-class="sponsorForm && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					</div>
+				</div>
+
+				<div class="input-wrapper flex-width" style="width:90%;">
+					<div class="margin-right">
+						<label for="pass_issued">First Name *</label>
+						<input type="text" id="pass_issued" name="pass_issued" placeholder="First Name" ng-model="sponsor.first_name" required ng-class="sponsorForm && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					</div>
+
+					<div>
+						<label for="pass_exp">Last Name *</label>
+						<input type="text" id="pass_exp" name="pass_exp" placeholder="Last Name" ng-model="sponsor.last_name" required ng-class="sponsorForm && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					</div>
+
+				</div>
+				<div class="input-wrapper flex-width" style="width:90%;">
+					<div class="margin-right">
+						<label for="pass_issued">Phone Number *</label>
+						<input type="text" id="pass_issued" name="pass_issued" placeholder="Phone Number" ng-model="sponsor.phone" required ng-class="sponsorForm && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					</div>
+
+					<div>
+						<label for="sponsor_email">Email *</label>
+						<input type="text" id="sponsor_email" name="sponsor_email" placeholder="Email" ng-model="sponsor.email" required ng-class="sponsorForm && sponsorForm.sponsor_email.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					</div>
+
+				</div>
+				<button class="btn btn-success" style="margin: 0 20px;" ng-click="submit_sponsor_form(sponsorForm1.$valid);" 
+				ng-disabled="submitting_sponsors">SUBMIT
+					<i class="fas fa-spinner fa-spin" ng-if="submitting_sponsors"></i></button>
+			</div>
+
+			<!--<div id="relative-sponsor" class="bouncy-slide-left" ng-show="qwe == 'relative'">
 			<div class="input-wrapper flex-width" style="width:100%;">
 				<div class="margin-right">
 					<label for="pass_issued">Relative First Name *</label>
-					<input type="text" id="pass_issued" name="pass_issued" placeholder="First Name" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="First Name" ng-model="personal.pass_issued" required ng-class="sponsorForm && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
 				</div>
 
 				<div>
 					<label for="pass_exp">Relative Last Name *</label>
-					<input type="text" id="pass_exp" name="pass_exp" placeholder="Last Name" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Last Name" ng-model="personal.pass_exp" required ng-class="sponsorForm && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
 				</div>
 
 			</div>
 			<div class="input-wrapper flex-width" style="width:100%;">
 				<div class="margin-right">
 					<label for="pass_exp">Relation To You</label>
-					<input type="text" id="pass_exp" name="pass_exp" placeholder="Relationship type" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Relationship type" ng-model="personal.pass_exp" required ng-class="sponsorForm && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
 				</div>
 
 				<div class="margin-right">
 					<label for="pass_issued">Phone Number *</label>
-					<input type="text" id="pass_issued" name="pass_issued" placeholder="Phone Number" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="Phone Number" ng-model="personal.pass_issued" required ng-class="sponsorForm && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
 				</div>
 
 				<div>
 					<label for="pass_exp">Email *</label>
-					<input type="text" id="pass_exp" name="pass_exp" placeholder="Email" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" >
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Email" ng-model="personal.pass_exp" required ng-class="sponsorForm && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" >
 				</div>
 			</div>
-		</div>
-		<div id="sponsor-sponsor" class="bouncy-slide-left" ng-show="qwe == 'sponsor'">
+		</div>-->
+			<!--	<div id="sponsor-sponsor" class="bouncy-slide-left" ng-show="qwe == 'sponsor'">
 			<div class="input-wrapper flex-width" style="width:100%;">
 				<div class="margin-right">
 					<label for="pass_issued">Sponsor Organization Name *</label>
-					<input type="text" id="pass_issued" name="pass_issued" placeholder="Organization Name" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="Organization Name" ng-model="personal.pass_issued" required ng-class="sponsorForm && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
 				</div>
 
 				<div>
 					<label for="pass_exp">Contact Name *</label>
-					<input type="text" id="pass_exp" name="pass_exp" placeholder="Contact Person" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Contact Person" ng-model="personal.pass_exp" required ng-class="sponsorForm && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
 				</div>
 
 			</div>
 			<div class="input-wrapper flex-width" style="width:100%;">
 				<div class="margin-right">
 					<label for="pass_exp">Title</label>
-					<input type="text" id="pass_exp" name="pass_exp" placeholder="" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="" ng-model="personal.pass_exp" required ng-class="sponsorForm && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
 				</div>
 
 				<div class="margin-right">
 					<label for="pass_issued">Phone Number *</label>
-					<input type="text" id="pass_issued" name="pass_issued" placeholder="Phone Number" ng-model="personal.pass_issued" required ng-class="applicationFormSubmitted && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
+					<input type="text" id="pass_issued" name="pass_issued" placeholder="Phone Number" ng-model="personal.pass_issued" required ng-class="sponsorForm && sponsorForm.pass_issued.$error.required ? 'error-input' : ''" ui-mask-use-viewvalue="true">
 				</div>
 
 				<div>
 					<label for="pass_exp">Email *</label>
-					<input type="text" id="pass_exp" name="pass_exp" placeholder="Email" ng-model="personal.pass_exp" required ng-class="applicationFormSubmitted && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" >
+					<input type="text" id="pass_exp" name="pass_exp" placeholder="Email" ng-model="personal.pass_exp" required ng-class="sponsorForm && sponsorForm.pass_exp.$error.required ? 'error-input' : ''" >
 				</div>
 			</div>
+		</div>-->
+
 		</div>
 
-	</div>
-	
-</form>
+	</form>
 </div>
 
 
-<button ui-sref="application.overall">NEXT</button>

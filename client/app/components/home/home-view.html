@@ -1,7 +1,21 @@
 <div class="container-fluid main-page-top">
-	<div class="page-top-content">
+<div class=" page-top-content pull-left wow bounceInLeft">
+	<h1 class="wow bounceInLeft" style="color:#fff">WELCOME {{currentUser.name + " " + currentUser.lastname}}</h1>
+	<img src="client/app/assets/student.png" alt="" style="width:20%">
+	<button class="btn btn-primary">GET STARTED</button>
+</div>
+	<div class="page-top-content pull-right">
 		<!--<div>Edu Action <br /> Leads You to Success</div>
 		<button class="btn btn-primary">APPLY NOW</button>-->
+		<div class="easy-steps pull-right wow bounceInRight" >
+			<h3 class="text-center">3 Easy Steps</h3> 
+			<ul>
+				<li>1. &nbsp;  <i class="fa fa-edit"></i> &nbsp;  Create A Profile</li>
+				<li>2. &nbsp;  <i class="fa fa-university"></i> &nbsp; Fill College Application</li>
+				<li>3. &nbsp;  <i class="fa fa-check-circle"></i> &nbsp; Get Confirmation</li>
+			</ul>
+			<div class="get-started-div">GET STARTED</div>
+		</div>
 	</div>
 </div>
 <div class="page-wrapper">
@@ -81,34 +95,34 @@
 			Countries of Study
 		</div>
 		<div class="countries-of-study-wrapper row">
-			<div class="country-unit" ng-click="go_usa()">
+			<div class="country-unit col-sm-2" ng-click="go_usa()">
 				<img src="client/app/assets/countries/usa2.jpg" alt="">
 				<div>United States of <br /> America</div>
 			</div>
-			<div class="country-unit" ng-click="go_uk()">
+			<div class="country-unit col-sm-2" ng-click="go_uk()">
 				<img src="client/app/assets/countries/uk2.jpg" alt="">
 				<div>United Kingdom</div>
 			</div>
-			<div class="country-unit" ng-click="go_my()">
+			<div class="country-unit col-sm-2" ng-click="go_my()">
 				<img src="client/app/assets/countries/my2.jpg" alt="">
 				<div>Malaysia</div>
 			</div>
-			<div class="country-unit">
+			<div class="country-unit col-sm-2" ng-click="go_sg()">
 				<img src="client/app/assets/countries/sg2.jpeg" alt="">
 				<div>Singapore</div>
 			</div>
-			<div class="country-unit">
+			<div class="country-unit col-sm-2" ng-click="go_kr()">
 				<img src="client/app/assets/countries/korea2.jpg" alt="">
 				<div>North Korea</div>
 			</div>
-			<div class="country-unit">
+			<div class="country-unit col-sm-2" ng-click="go_kr()">
 				<img src="client/app/assets/countries/aust2.jpg" alt="">
 				<div>Australia</div>
-			</div>
+			</div><!--
 			<div class="country-unit">
 				<img src="client/app/assets/countries/japan2.jpg" alt="">
 				<div>Japan</div>
-			</div>
+			</div>-->
 		</div>
 	</div>
 

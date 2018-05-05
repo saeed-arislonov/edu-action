@@ -2,27 +2,45 @@
 	'use strict';
 
 	angular.module('eduAction')
-		.controller('home', function ($scope, $rootScope, $state, $transitions, $localstorage, $window) {
+		.controller('home', function ($scope, $rootScope, $state, $transitions, $localstorage, $window, $http) {
 
-		
-		/*$scope.isAuth = function(){
-			console.log($localstorage.get('access_token'))
-		}*/
-		
-			$scope.isAuth = function(){
-			if($localstorage.get('access_token') != undefined){
-				return true
-			} else {
-				return false
+
+			/*$scope.isAuth = function(){
+				console.log($localstorage.get('access_token'))
+			}*/
+
+			$scope.isAuth = function () {
+				if ($localstorage.get('access_token') != undefined) {
+					return true
+				} else {
+					return false
+				}
+			};
+
+			if ($rootScope.currentUser == undefined) {
+				$rootScope.currentUser = $localstorage.getObject('currentUser');
 			}
-		}
+
+		$scope.updateCurrentUser = function(){
+			$http.get('http://api.edu-action.com/api/user/profile?id='+ $rootScope.currentUser.id)
+				.then(function (resp) {
+				//	console.log(resp.data);
+					$rootScope.currentUser = resp.data
+						$localstorage.setObject('currentUser', $rootScope.currentUser);
+				}, function (err) {
+					console.log(err)
+				});
+		};
 		
-		console.log($scope.isAuth())
-		
-		$rootScope.signOut = function(){
-			localStorage.removeItem('access_token');
-			$window.location.reload();
-		}
+		$scope.updateCurrentUser()
+			
+
+			console.log($scope.isAuth())
+
+			$rootScope.signOut = function () {
+				localStorage.removeItem('access_token');
+				$window.location.reload();
+			}
 
 			$rootScope.go_signup = function () {
 				$state.go('login', {
@@ -36,18 +54,19 @@
 			}
 
 			$rootScope.go_application = function () {
-				console.log('adasdasd')
 				$state.go('home.application.overall');
 			}
 
 			$transitions.onSuccess({}, function () {
-				console.log($state.current.name)
-				if($state.current.name == 'home') {
+				console.log($state.current.name);
+				$(window).scrollTop(0);
+				return false;
+				if ($state.current.name == 'home') {
 					$state.go('home.main');
 				}
 			});
 
-			
+
 
 
 		});

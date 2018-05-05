@@ -74,7 +74,7 @@
 			<div class="input-wrapper">
 				<label for="expected_graduation">When is Expected Graduation ? *</label>
 				<select ng-model="personal.expected_graduation" id="expected_graduation" placeholder="Expected Graduation" ng-options="year for year in years" required name="expected_graduation" ng-class="applicationFormSubmitted && personalForm.expected_graduation.$error.required ? 'error-input' : ''"></select>
-				<button ng-click="submitPersonal(personalForm.$valid)" class="btn btn-success next-to-form">Submit & Next</button>
+				<button ng-click="submit_personal_form(personalForm.$valid)" class="btn btn-success next-to-form">Submit & Next</button>
 			</div>
 		</div>
 	</form>
