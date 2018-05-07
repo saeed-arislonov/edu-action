@@ -59,50 +59,8 @@
 				<div class="regions-white-bg">
 					<h3>Find a school based on region</h3>
 					<div class="row">
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-us">United States</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-uk">United Kingdom</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-canada">Canada</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-aus">Australia</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-ger">Germany</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-austria">Austria</a>
-						</div>
-
-
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-south-korea">South Korea</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-japan">Japan</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-singapore">Singapore</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-my">Malaysia</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-malta">Malta</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-poland">Poland</a>
-						</div>
-
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-latvia">Latvia</a>
-						</div>
-						<div class="col-lg-2 col-xs-6">
-							<a href="" class="search-flags search-flag-china">China</a>
+						<div class="col-lg-2 col-xs-6" ng-repeat="country in countries_of_study">
+							<a href="" class="search-flags" style="background-image: url('http://api.edu-action.com{{country.icon}}')">{{country.name}}</a>
 						</div>
 					</div>
 				</div>
@@ -111,7 +69,12 @@
 				<div class="majors-white-bg">
 					<h3>Find a school based on major</h3>
 					<div class="row dept-container" >
-						<div class="">
+						<div class="" ng-repeat="major in majors_of_study">
+							<a href="" class="search-majors">
+								<img src="http://api.edu-action.com{{major.icon}}" width="70" alt=""><br> {{major.name}}
+							</a>
+						</div>
+						<!--<div class="">
 							<a href="" class="search-majors">
 								<img src="client/app/assets/majors/agriculture.png" width="70" alt=""><br> Agriculture & Related Sciences
 							</a>
@@ -184,7 +147,7 @@
 							<a href="" class="search-majors">
 								<img src="client/app/assets/majors/tools1.png" width="70" alt=""><br> Trades & Applied Sciences
 							</a>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>

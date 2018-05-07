@@ -1,3 +1,4 @@
+<toaster-container></toaster-container>
 <div class="login-reg">
 	<div class="login-wrapper">
 		<div class="login-section" ng-switch on="stage">
@@ -8,7 +9,7 @@
 			
 			
 			<div id="registration-section" class="" ng-switch-default>
-				<div class="login-title">Sign Up Free and Get Started {{register.email == ''}} </div>
+				<div class="login-title">Sign Up Free and Get Started </div>
 				<form name="sign_up_form" novalidate>
 					<div class="row">
 						<div class="col-lg-6 input-fields-login">
@@ -29,7 +30,7 @@
 							<input type="password" placeholder="Password" ng-model="register.password" required ng-class="form_submitted && register.password == '' ? 'error-input' : ''">
 						</div>
 						<div class="col-lg-6 input-fields-login">
-							<input type="password" ng-model="password2" ng-blur="matchPassword(password2)" required ng-class="form_submitted && register.password == '' ? 'error-input' : ''">
+							<input type="password" ng-model="password2" ng-blur="matchPassword(password2)" required ng-class="form_submitted && register.password == '' ? 'error-input' : ''" placeholder="Re-type password">
 							<p class="error-text" ng-show="pass_match">Password doesn`t match</p>
 						</div>
 					</div>
@@ -37,20 +38,21 @@
 						<div class="col-lg-6 input-fields-login">
 							<input type="text" ng-model="register.birth_date"  name="date"
 							ng-class="form_submitted && register.birth_date == '' ? 'error-input' : ''" required
-							placeholder="dd/mm/yyyy" ui-mask="99/99/9999" ui-mask-use-viewvalue="true">
+							 uib-datepicker-popup is-open="popup_open" ng-focus="popup_open = true" datepicker-options="dateOptions"
+							 placeholder="Date of Birth"> <!--placeholder="dd/mm/yyyy" ui-mask="99/99/9999" ui-mask-use-viewvalue="true"-->
 						</div>
 						<div class="col-lg-6 input-fields-login agreement-text">
 							You must be 13 years or older to sign up.
 						</div>
 						<div class="col-lg-12 input-fields-login">
 						<label for="agree">
-							<input type="checkbox" ng-model="agreee" id="agree" required> <span style="font-size: 14px;margin-left:10px">I agree to the Edu-Action <a href="#">terms of service</a> & <a href="#">privacy policy</a></span>
+							<input type="checkbox" ng-model="agreee" id="agree" required> <span style="font-size: 14px;margin-left:10px">I agree to the Edu-Action <a ui-sref="home.term_of_services">terms of service</a> & <a ui-sref="home.privacy_policy">privacy policy</a></span>
 						</label>
 						</div>
 						<div class="col-lg-12 sign-up-button">
-							<button ng-click="sign_up(sign_up_form.$valid)"
+							<button type="submit" ng-click="sign_up(sign_up_form.$valid)"
 							  ng-if="agreee">Sign Up</button>
-							  <button type="submit" uib-popover="You should agree to our terms of services and privacy policy" 
+							  <button type="button" uib-popover="You should agree to our terms of services and privacy policy" 
 							 ng-if="!agreee" popover-trigger="'mouseenter'">Sign Up</button>
 							 
 							<a class="already-account" id="switch-to-login" ng-click="next('stage1')">Already have an account?</a>

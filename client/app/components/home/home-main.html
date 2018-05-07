@@ -32,8 +32,8 @@
 		</div>
 		<div class="navigation-bar">
 			<a ui-sref="home.main">Home</a>
-			<a ui-sref="home.application.overall">Apply for a College</a>
-			<a ui-sref="home.colleges">Find a College</a>
+			<a ui-sref="home.colleges" class="clickable">Find a College</a>
+			<a ng-click="go_apply_college()" class="clickable">Apply for a College</a>
 			<a ui-sref="home.application.college-status" ng-if="isAuth()">My Status</a>
 			<!--<a href="">Compare Colleges</a>
 			<a href="">Majors</a>-->
@@ -79,7 +79,7 @@
 							<div class="footer-mini-title">Information</div>
 							<ul class="info-footer">
 								<li>About Edu Action</li>
-								<li>F.A.Q</li>
+								<li ui-sref="home.faq">F.A.Q</li>
 								<li ui-sref="home.term_of_services">Terms of Services</li>
 								<li ui-sref="home.privacy_policy">Privacy Policy</li>
 							</ul>

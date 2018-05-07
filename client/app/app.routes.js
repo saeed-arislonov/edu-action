@@ -30,6 +30,10 @@
 					url: '/terms-of-services',
 					templateUrl: 'client/app/components/home/terms-of-services.html'
 				})
+				.state('home.faq', {
+					url: '/faq',
+					templateUrl: 'client/app/components/home/faq.html'
+				})
 				.state('home.usa', {
 					url: '/study-in-usa',
 					templateUrl: 'client/app/components/college/study-usa.html',

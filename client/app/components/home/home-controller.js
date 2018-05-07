@@ -9,6 +9,11 @@
 				console.log($localstorage.get('access_token'))
 			}*/
 
+			$scope.options = {
+				minDate: new Date(),
+				showWeeks: true
+			};
+
 			$scope.isAuth = function () {
 				if ($localstorage.get('access_token') != undefined) {
 					return true
@@ -21,25 +26,40 @@
 				$rootScope.currentUser = $localstorage.getObject('currentUser');
 			}
 
-		$scope.updateCurrentUser = function(){
-			$http.get('http://api.edu-action.com/api/user/profile?id='+ $rootScope.currentUser.id)
-				.then(function (resp) {
-				//	console.log(resp.data);
-					$rootScope.currentUser = resp.data
-						$localstorage.setObject('currentUser', $rootScope.currentUser);
-				}, function (err) {
-					console.log(err)
-				});
-		};
-		
-		$scope.updateCurrentUser()
-			
+			$scope.updateCurrentUser = function () {
+				if ($scope.isAuth()) {
+					$http.get('http://api.edu-action.com/api/user/profile?id=' + $rootScope.currentUser.id)
+						.then(function (resp) {
+							//	console.log(resp.data);
+							$rootScope.currentUser = resp.data
+							$localstorage.setObject('currentUser', $rootScope.currentUser);
+						}, function (err) {
+							console.log(err)
+						});
+				} else {
+					console.log("Not a user")
+				}
+
+			};
+
+			$scope.updateCurrentUser()
+
 
 			console.log($scope.isAuth())
 
 			$rootScope.signOut = function () {
 				localStorage.removeItem('access_token');
+				localStorage.removeItem('currentUser');
+				$rootScope.currentUser = {};
 				$window.location.reload();
+			}
+
+			$rootScope.go_apply_college = function () {
+				if ($scope.isAuth()) {
+					$state.go("home.application.overall")
+				} else {
+					$rootScope.go_signup();
+				}
 			}
 
 			$rootScope.go_signup = function () {
@@ -65,6 +85,35 @@
 					$state.go('home.main');
 				}
 			});
+
+			$http.get('http://api.edu-action.com/api/category/countries')
+				.then(function (resp) {
+					$scope.countries_of_study = resp.data.data;
+					console.log('Countrues ', $scope.countries_of_study);
+				}, function (err) {
+					console.log(err)
+				});
+
+			$http.get('http://api.edu-action.com/api/category/directions')
+				.then(function (resp) {
+					$scope.majors_of_study = resp.data.data;
+
+					console.log('Majors ', $scope.majors_of_study);
+				}, function (err) {
+					console.log(err)
+				});
+			$http.get('http://api.edu-action.com/api/university')
+				.then(function (resp) {
+					$scope.universities_of_study = resp.data.data;
+
+					console.log('universities_of_study ', $scope.universities_of_study);
+				}, function (err) {
+					console.log(err)
+				});
+
+			$scope.stripAddr = function (address) {
+				return address.replace("&amp;", "&");
+			}
 
 
 

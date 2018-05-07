@@ -4,15 +4,15 @@
 		<div class="col-lg-6">
 			<div class="input-wrapper">
 				<label for="name">Your Full Name *</label>
-				<input type="text" name="name" id="name" placeholder="Name" required ng-model="personal.name" ng-class="applicationFormSubmitted && personalForm.name.$error.required ? 'error-input' : ''">
+				<input type="text" name="name" id="name" placeholder="Name" required ng-model="name" ng-value="currentUser.name + ' ' + currentUser.lastname" ng-class="applicationFormSubmitted && personalForm.name.$error.required ? 'error-input' : ''">
 			</div>
 			<div class="input-wrapper">
 				<label for="date_of_birth">Your Date of Birth *</label>
-				<input type="text" id="date_of_birth" name="dob" placeholder="dd/mm/yyyy" ng-model="personal.dob" required ng-class="applicationFormSubmitted && personalForm.dob.$error.required ? 'error-input' : ''" ui-mask="99/99/9999" ui-mask-use-viewvalue="true">
+				<input type="text" id="date_of_birth" name="dob" placeholder="dd/mm/yyyy" ng-model="dob" required ng-class="applicationFormSubmitted && personalForm.dob.$error.required ? 'error-input' : ''" ng-value="">
 			</div>
 			<div class="input-wrapper">
 				<label for="">What is Your Gender ? *</label>
-				<select name="gender" id="" ng-model="personal.gender" ng-options="gender.title for gender in genders" ng-class="applicationFormSubmitted && personalForm.gender.$error.required ? 'error-input' : ''" required>
+				<select name="gender" id="" ng-model="personal.gender" ng-options="gender.id as gender.title for gender in genders" ng-class="applicationFormSubmitted && personalForm.gender.$error.required ? 'error-input' : ''" required>
 			</select>
 			</div>
 			<div class="input-wrapper">

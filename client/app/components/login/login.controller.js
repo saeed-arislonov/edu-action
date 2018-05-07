@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular.module('eduAction')
-		.controller('login', function ($scope, $rootScope, $state, $timeout, $http, $localstorage) {
+		.controller('login', function ($scope, $rootScope, $state, $timeout, $http, $localstorage, toaster) {
 
 			console.log($state.params.isLogin);
 
@@ -59,6 +59,8 @@
 					console.log("Form NOT valid")
 				}
 			};
+		
+		$scope.popup_open = false;
 
 
 			$scope.login = {};
@@ -84,6 +86,11 @@
 							}, 100);
 						}, function(err, status, config, headers){
 							console.log(err, status, config, headers);
+							console.log(err.data.message);
+						//toaster.pop("danger", "Wrong login or password")
+						if(err.data.message == "Не верный логин и/или пароль"){
+							toaster.pop("error", "Error", "Wrong login or password")
+						}
 						})
 
 					/*console.log(valid, $scope.login)
