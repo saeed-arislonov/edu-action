@@ -38,7 +38,7 @@
 						<div class="col-lg-6 input-fields-login">
 							<input type="text" ng-model="register.birth_date"  name="date"
 							ng-class="form_submitted && register.birth_date == '' ? 'error-input' : ''" required
-							 uib-datepicker-popup is-open="popup_open" ng-focus="popup_open = true" datepicker-options="dateOptions"
+							 uib-datepicker-popup="longDate" is-open="popup_open" ng-focus="popup_open = true" datepicker-options="dateOptions"
 							 placeholder="Date of Birth"> <!--placeholder="dd/mm/yyyy" ui-mask="99/99/9999" ui-mask-use-viewvalue="true"-->
 						</div>
 						<div class="col-lg-6 input-fields-login agreement-text">

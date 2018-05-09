@@ -21,7 +21,7 @@
 				<h2>asdasd</h2>
 			</div>
 			<div class="col-lg-4 call-action-buttons hide-mobile">
-				<button class="sign-up" ng-if="!isAuth()" ng-click="go_signup()">Sign Up</button>
+				<button class="sign-up" ng-if="!isAuth()" ng-click="go_signup()">Sign Up </button>
 				<button class="log-in" ng-if="!isAuth()" ng-click="go_login()">Log In</button>
 				<!--<button class="log-in" ng-click="go_application()">College Application</button>
 				<button class="log-in">Contact Us</button>-->
@@ -32,9 +32,13 @@
 		</div>
 		<div class="navigation-bar">
 			<a ui-sref="home.main">Home</a>
-			<a ui-sref="home.colleges" class="clickable">Find a College</a>
+			<a ui-sref="home.colleges" class="clickable">Find a College </a>
 			<a ng-click="go_apply_college()" class="clickable">Apply for a College</a>
-			<a ui-sref="home.application.college-status" ng-if="isAuth()">My Status</a>
+			<a ui-sref="home.application.college-status" ng-if="isAuth()" style="padding-right:0;">My Status
+			</a>
+			<div class="circle" id="circle-b">
+						<strong></strong>
+			</div>
 			<!--<a href="">Compare Colleges</a>
 			<a href="">Majors</a>-->
 		</div>
