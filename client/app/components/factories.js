@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('eduAction').service("application_datas", function () {
+	angular.module('eduAction').service("application_datas", function ($http) {
 			this.countries = [{
 					"name": "Western Sahara",
 					"code": "EH"
@@ -22,7 +22,19 @@
 					"name": "Malaysia",
 					"code": "MY"
 			}];
-			this.spokenLanguages = [{
+		
+		//var languagess;
+		this.spokenLanguages = $http.get('http://api.edu-action.com/api/category/languages')
+				/*.then(function (resp) {
+					languagess = resp.data.data;
+
+					console.log('this.spokenLanguages ', languagess);
+				}, function (err) {
+					console.log(err)
+				});*/
+		
+	//	this.spokenLanguages = languagess;
+			/*this.spokenLanguages = [{
 				"title": "Uzbek"
 			}, {
 				"title": "Russian"
@@ -32,7 +44,7 @@
 				"title": "Tajik"
 			}, {
 				"title": "Mongolian"
-			}];
+			}];*/
 			this.booleans = [{
 				"title": "Yes",
 				"code": "1"
@@ -62,7 +74,7 @@
 				"id" : "1",
 				"title": "Male"
 		}, {
-				"id" : "0",
+				"id" : "2",
 				"title": "Female"
 		}];
 		}).factory('optionParser', ['$parse', function ($parse) {
@@ -369,5 +381,17 @@
       return JSON.parse($window.localStorage[key] || '{}');
     }
   }
-}]);
+}]).filter('decoded', function() {
+  "use strict";
+
+  function htmlDecode(input) {
+    var e = document.createElement('div');
+    e.innerHTML = input;
+    return e.childNodes[0].nodeValue;
+  }
+
+  return function(input) {
+    return htmlDecode(input);
+  }
+});;
 }());

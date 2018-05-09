@@ -85,23 +85,28 @@
 				})
 				.state('home.application.form-personal', {
 					url: '/personal',
-					templateUrl: 'client/app/components/application/application-form-personal.html',
+					templateUrl: 'client/app/components/application/form-personal/application-form-personal.html',
+					controller: 'formPersonal'
 				})
 				.state('home.application.form-contact', {
 					url: '/contact',
-					templateUrl: 'client/app/components/application/application-form-contact.html',
+					templateUrl: 'client/app/components/application/form-contact/application-form-contact.html',
+					controller: 'formContact'
 				})
 				.state('home.application.form-objectives', {
-					url: '/objectives', 
-					templateUrl: 'client/app/components/application/application-form-objectives.html',
+					url: '/objectives',
+					templateUrl: 'client/app/components/application/form-objectives/application-form-objectives.html',
+					controller: 'formObjectives'
 				})
 				.state('home.application.form-sponsors', {
 					url: '/sponsors',
-					templateUrl: 'client/app/components/application/application-form-sponsors.html',
+					templateUrl: 'client/app/components/application/form-sponsors/application-form-sponsors.html',
+					controller: 'formSponsors'
 				})
 				.state('home.application.form-uploads', {
 					url: '/uploads',
-					templateUrl: 'client/app/components/application/application-form-uploads.html',
+					templateUrl: 'client/app/components/application/form-uploads/application-form-uploads.html',
+					controller: 'formUploads'
 				});
 			$urlRouterProvider.otherwise('/home/main');
 		});

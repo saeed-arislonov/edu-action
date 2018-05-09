@@ -71,7 +71,7 @@
 					<div class="row dept-container" >
 						<div class="" ng-repeat="major in majors_of_study">
 							<a href="" class="search-majors">
-								<img src="http://api.edu-action.com{{major.icon}}" width="70" alt=""><br> {{major.name}}
+								<img src="http://api.edu-action.com{{major.icon}}" width="70" alt=""><br> <span ng-bind-html="major.name"></span>
 							</a>
 						</div>
 						<!--<div class="">

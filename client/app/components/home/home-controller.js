@@ -5,6 +5,33 @@
 		.controller('home', function ($scope, $rootScope, $state, $transitions, $localstorage, $window, $http) {
 
 
+		/*	var progressBarOptions = {
+				startAngle: -1.55,
+				size: 100,
+				value: 0.55,
+				fill: {
+					color: 'green'
+				}
+			}
+
+			$('.circle').circleProgress(progressBarOptions).on('circle-animation-progress', function (event, progress, stepValue) {
+				$(this).find('strong').text(String(stepValue.toFixed(2)).substr(2) + '%');
+			});*/
+
+		/*console.log($('.circle').html())
+			$('#circle-b').circleProgress({
+				value: 0.25,
+				size: 50,
+				fill: {
+					color: '#FF0000'
+				}
+			}).on('circle-animation-progress', function (event, progress, stepValue) {
+				$(this).find('strong').text(String(stepValue.toFixed(2)).substr(2) + '%');
+			});*/
+		/*$('#circle-b').circleProgress(progressBarOptions).on('circle-animation-progress', function (event, progress, stepValue) {
+				$(this).find('strong').text(String(stepValue.toFixed(2)).substr(2) + '%');
+			});*/
+
 			/*$scope.isAuth = function(){
 				console.log($localstorage.get('access_token'))
 			}*/
@@ -89,7 +116,7 @@
 			$http.get('http://api.edu-action.com/api/category/countries')
 				.then(function (resp) {
 					$scope.countries_of_study = resp.data.data;
-					console.log('Countrues ', $scope.countries_of_study);
+					//console.log('Countrues ', $scope.countries_of_study);
 				}, function (err) {
 					console.log(err)
 				});
@@ -98,7 +125,7 @@
 				.then(function (resp) {
 					$scope.majors_of_study = resp.data.data;
 
-					console.log('Majors ', $scope.majors_of_study);
+				//	console.log('Majors ', $scope.majors_of_study);
 				}, function (err) {
 					console.log(err)
 				});
@@ -106,7 +133,7 @@
 				.then(function (resp) {
 					$scope.universities_of_study = resp.data.data;
 
-					console.log('universities_of_study ', $scope.universities_of_study);
+					//console.log('universities_of_study ', $scope.universities_of_study);
 				}, function (err) {
 					console.log(err)
 				});
