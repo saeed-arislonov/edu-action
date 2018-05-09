@@ -25,28 +25,28 @@
 				<h1>Sections</h1>
 				<ul>
 					<li>
-						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
-						<i class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
+						<i ng-if="currentUser.info == null"   class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i ng-if="currentUser.info != null"   class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
 						<a ui-sref="home.application.form-personal"> Personal Information </a>
 					</li>
 					<li ui-sref="home.application.form-contact">
-						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
-						<i class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
+						<i ng-if="currentUser.contact == null"  class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i ng-if="currentUser.contact != null"  class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
 						<a ui-sref="home.application.form-contact">Contact Info</a>
 					</li>
 					<li>
-						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
-						<i class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
+						<i ng-if="currentUser.objective == null"  class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i ng-if="currentUser.objective != null"  class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
 						<a ui-sref="home.application.form-objectives"> Objectives </a>
 					</li>
 					<li>
-						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
-						<i class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
+						<i ng-if="currentUser.sponsor == null" class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i ng-if="currentUser.sponsor != null" class="fa fa-check-circle" style="color:#4cae4c" title="Form successfully submitted"></i>
 						<a ui-sref="home.application.form-sponsors">Sponsors </a>
 					</li>
 					<li>
-						<i class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
-						<i class="fa fa-check-circle" style="color:#2bb552" title="Form successfully submitted"></i>
+						<i ng-if="currentUser.userFiles.length == 0"  class="fa fa-exclamation-circle" style="color:red" title="Form is not submitted yet"></i>
+						<i ng-if="currentUser.userFiles.length > 0"  class="fa fa-check-circle" style="color:#2bb552" title="Form successfully submitted"></i>
 						<a ui-sref="home.application.form-uploads">Uploads </a>
 					</li>
 				</ul>

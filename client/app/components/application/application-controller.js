@@ -14,10 +14,11 @@
 			$scope.genders = application_datas.genders;
 			$scope.booleans = application_datas.booleans;
 
+		$scope.drawCircle = function(val){
 			var progressBarOptions = {
 				startAngle: -1.55,
 				size: 100,
-				value: 0.55,
+				value: val,
 				fill: {
 					color: '#FB6B1D'
 				}
@@ -26,6 +27,43 @@
 			$('.circle').circleProgress(progressBarOptions).on('circle-animation-progress', function (event, progress, stepValue) {
 				$(this).find('strong').text(String(stepValue.toFixed(2)).substr(2) + '%');
 			});
+		}
+			
+		
+		$scope.calculateCircle = function(){
+			var array_circle = [],
+					sponsor_val, objective_val, contact_val, info_val, files_val;
+			if($rootScope.currentUser.sponsor != null){
+				sponsor_val = .20
+			} else {
+				sponsor_val = 0
+			} 
+			if($rootScope.currentUser.objective != null){
+				objective_val = .20
+			} else {
+				objective_val = 0
+			}
+			if($rootScope.currentUser.contact != null){
+				contact_val = .20
+			} else {
+				contact_val = 0
+			}
+			if($rootScope.currentUser.info != null){
+				info_val = .20
+			} else {
+				info_val = 0
+			}
+			if($rootScope.currentUser.userFiles > 0){
+				files_val = .20
+			} else {
+				files_val = 0
+			}
+			var final = sponsor_val + objective_val + contact_val + info_val + files_val;
+			console.log("final", final);
+			$scope.drawCircle(final.toString())
+		};
+		
+		$scope.calculateCircle();
 
 
 			$http.get('http://api.edu-action.com/api/category/exams')
@@ -33,6 +71,22 @@
 					console.log('EXAMS ', resp);
 				}, function (err) {
 					console.log(err)
+				});
+		
+			$http.get('http://api.edu-action.com/api/category/directions')
+				.then(function (resp) {
+					$scope.main_majors = resp.data.data;
+				console.log('$scope.main_majors === > ', $scope.main_majors)
+				}, function (err) {
+					console.log(err)
+				});
+		
+			$http.get('http://api.edu-action.com/api/university')
+				.then(function (resp) {
+					$scope.main_universities = resp.data.data;
+				console.log('$scope.main_universities === > ', $scope.main_universities)
+				}, function (err) {
+					console.log(err);
 				});
 
 
@@ -99,9 +153,11 @@
 							'Content-Type': 'application/x-www-form-urlencoded'
 						}
 					}).then(function (data) {
-						$scope.submitting_contacts = false;
+						toaster.pop('success', "Your information Updated successfully");
 						console.log(data);
 						$scope.updateCurrentUser();
+						$scope.calculateCircle();
+						$scope.submitting_contacts = false;
 						//	$state.go('home.application.form-objectives');
 					}, function (err, status, config, headers) {
 						console.log(err, status, config, headers);
@@ -142,7 +198,8 @@
 							$scope.submitting_sponsors = false;
 						console.log(data);
 						$scope.updateCurrentUser();
-                         toaster.pop('success', "Your information Updated successfully");
+            toaster.pop('success', "Your information Updated successfully");
+						$scope.calculateCircle();
 						//	$state.go('home.application.form-objectives');
 					}, function (err, status, config, headers) {
 							$scope.submitting_sponsors = false;
@@ -153,6 +210,19 @@
 					$scope.sponsorForm = true;
 				}
 			};
+		
+			if ($rootScope.currentUser.objective != null) {
+				$scope.objective = $rootScope.currentUser.objective
+			} else {
+
+				$scope.objective = {};
+				$scope.objective.majors_interested = [];
+				$scope.objective.selected_colleges = [];
+			}
+		
+		$scope.submit_objective = function(valid){
+			console.log($scope.objective)
+		}
 
 
 		$scope.submitting_uploads = false;
@@ -199,7 +269,10 @@
 					success: function (response) {
 						//console.log('response == >', response);
 						console.log(response, "SUCCESSSSSSS");
+						$scope.updateCurrentUser();
 						$scope.submitting_uploads = false;
+						$scope.calculateCircle();
+						toaster.pop('success', "Your information Updated successfully");
 					},
 					error: function (error, a, b, c) {
 						console.log(error, a, b, c);

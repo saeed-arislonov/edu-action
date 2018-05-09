@@ -2,9 +2,9 @@
 	'use strict';
 
 	angular.module('eduAction')
-		.controller('collegeController', function ($scope, $rootScope, $state, $transitions) {
+		.controller('collegeController', function ($scope, $rootScope, $state, $transitions, $http) {
 		
-		console.log('asdasdasdddasdasdasddd')
+		
 		
 	});
 	

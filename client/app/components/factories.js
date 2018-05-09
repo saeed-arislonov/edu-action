@@ -59,8 +59,10 @@
 		}];
 			this.years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"];
 			this.genders = [{
+				"id" : "1",
 				"title": "Male"
 		}, {
+				"id" : "0",
 				"title": "Female"
 		}];
 		}).factory('optionParser', ['$parse', function ($parse) {
@@ -163,6 +165,7 @@
 						function parseModel() {
 							scope.items.length = 0;
 							var model = parsedResult.source(originalScope);
+							console.log('model', model);
 							for (var i = 0; i < model.length; i++) {
 								var local = {};
 								local[parsedResult.itemName] = model[i];
@@ -174,7 +177,9 @@
 							}
 						}
 
-						parseModel();
+						setTimeout(function(){
+							parseModel();
+						},1000)
 
 						element.append($compile(popUpEl)(scope));
 

@@ -1,6 +1,10 @@
 <div class="container-fluid main-page-top">
+<div class="absolute-back"></div>
 <div class=" page-top-content pull-left wow bounceInLeft">
-	<h1 class="wow bounceInLeft" style="color:#fff">WELCOME {{currentUser.name + " " + currentUser.lastname}}</h1>
+	<h1 class="wow bounceInLeft" style="color:#fff">WELCOME 
+	<span ng-if="isAuth()">{{currentUser.name + " " + currentUser.lastname}}</span>
+	<span ng-if="!isAuth()">Guest User</span>
+	  </h1>
 	<img src="client/app/assets/student.png" alt="" style="width:20%">
 	<button class="btn btn-primary">GET STARTED</button>
 </div>
@@ -11,10 +15,10 @@
 			<h3 class="text-center">3 Easy Steps</h3> 
 			<ul>
 				<li>1. &nbsp;  <i class="fa fa-edit"></i> &nbsp;  Create A Profile</li>
-				<li>2. &nbsp;  <i class="fa fa-university"></i> &nbsp; Fill College Application</li>
+				<li>2. &nbsp;  <i class="fa fa-university"></i> &nbsp; Fill Up College Application</li>
 				<li>3. &nbsp;  <i class="fa fa-check-circle"></i> &nbsp; Get Confirmation</li>
 			</ul>
-			<div class="get-started-div">GET STARTED</div>
+			<div class="get-started-div" ng-click="go_apply_college()">GET STARTED</div>
 		</div>
 	</div>
 </div>

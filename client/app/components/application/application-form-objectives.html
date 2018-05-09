@@ -1,48 +1,67 @@
+<toaster-container></toaster-container>
 <h1 class="text-center">Objectives</h1>
 <div class="row" id="personal-info-form">
 	<div class="col-lg-8">
 		<div class="input-wrapper">
 			<label for="start_date">What is Your Intended Date to Start ?</label>
 			<div style="display: flex">
-				<select name="" id="start_date" ng-model="qw1e" style="margin-right:20px;">
-					<option value="">Spring</option>
-					<option value="">Fall</option>
-					<option value="">Summer</option>
+				<select name="" id="start_date" ng-model="start1.term" style="margin-right:20px;">
+					<option value="Spring">Spring</option>
+					<option value="Fall">Fall</option>
+					<option value="Summer">Summer</option>
 				</select>
-				<select name="" id="1as" ng-model="qw1eee">
-					<option value="">2018</option>
-					<option value="">2019</option>
-					<option value="">2020</option>
-					<option value="">2021</option>
-					<option value="">2022</option>
-					<option value="">2023</option>
-					<option value="">2024</option>
-					<option value="">2025</option>
+				<select name="" id="1as" ng-model="start1.year">
+					<option value="2018">2018</option>
+					<option value="2019">2019</option>
+					<option value="2020">2020</option>
+					<option value="2021">2021</option>
+					<option value="2022">2022</option>
+					<option value="2023">2023</option>
+					<option value="2024">2024</option>
+					<option value="2025">2025</option>
 				</select>
 			</div>
 		</div>
 		<div class="input-wrapper">
-			<label for="date_of_birth">What Education Style You Are Interested In ?</label>
-			<select name="" id="date_of_birth" ng-model="qwe">
-				<option value="campus">Campus Only</option>
-				<option value="online">Online</option>
-				<option value="both">Both</option>
+			<label for="school_gpa">What is Your High School GPA ?</label>
+			<input type="text" id="school_gpa" placeholder="High School GPA" ng-model="objective.high_scool_gpa">
+		</div>
+		<div class="input-wrapper">
+			<label for="edu_style">What Education Style You Are Interested In ?</label>
+			<select name="" id="edu_style" ng-model="objective.education_style">
+				<option value="Campus">Campus Only</option>
+				<option value="Online">Online</option>
+				<option value="Both">Both</option>
 			</select>
 		</div>
 		<div class="input-wrapper">
-			<label for="">What is Your Financial Ability ?</label>
-			<select name="" id="" ng-model="qwasde">
-				<option value="">$10.000</option>
-				<option value="">$20.000</option>
-				<option value="">$30.000</option>
-				<option value="">$40.000</option>
-				<option value="">$50.000</option>
+			<label for="financial_ability">What is Your Financial Ability ?</label>
+			<select name="" id="financial_ability" ng-model="objective.financial_ability">
+				<option value="$10.000">$10.000</option>
+				<option value="$20.000">$20.000</option>
+				<option value="$30.000">$30.000</option>
+				<option value="$40.000">$40.000</option>
+				<option value="$50.000">$50.000</option>
 			</select>
 		</div>
 		<div class="input-wrapper">
-			<label for="spoken_languages">What is Your High School GPA ?</label>
-			<input type="text" id="spoken_languages" placeholder="High School GPA">
+		<label for="financial_ability">Select Major</label>
+			<select name="" id="" ng-model="objective.majors_interested" ng-options="major as major.name for major in main_majors"></select>
 		</div>
+		<div class="input-wrapper">
+		<label for="financial_ability">Select University</label>
+			<!--<select name="" id="" ng-model="objective.selected_colleges" ng-options="uni as uni.name for uni in main_universities"></select>-->
+			
+			<multiselect class="input-xlarge" multiple="true" ng-model="objective.selected_colleges" options="c as c.name for c in main_universities" change="selected()"></multiselect>
+				<div class="multiselect-fields">
+					<span ng-repeat="lang in objective.selected_colleges">{{lang.name}}</span>
+				</div>
+		</div>
+		
+		<div class="text-right">
+			<button class="btn btn-success" ng-click="submit_objective()">SAVE & SUBMIT</button>
+		</div>
+		
 		<!--<div class="input-wrapper">
 			<label for="entrance_exams">College Entrance Exams</label>
 			<div class="exams-wrapper">

@@ -1,9 +1,19 @@
 .main-page-top {
-	background-image: url(../app/assets/wooden-table.jpg);
+	background-image: url(../app/assets/uni.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center bottom;
+	background-position: center top;
+	position: relative;
 	//background-attachment: unset;
+}
+
+.absolute-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .6;
+	left: 0;
 }
 
 html, body, * {
